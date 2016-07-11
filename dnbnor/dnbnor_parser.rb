@@ -146,6 +146,7 @@ module DnBNOR
       case value
       when String
         value = @inconv.iconv(value)
+        value = value.encode("UTF-8")
       end
       value
     end
