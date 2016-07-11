@@ -28,7 +28,7 @@ class TestDnBNOR < Test::Unit::TestCase
   end
 
 
-  DETAILS_TC1 = "Varekjøp  55551111               ,Ark.ref *17171717 Dato 08.08 Kl. 11.19 Versjon 1 Aut. 12345     Kiwi Sannergata Sannergt.3 Oslo"
+  DETAILS_TC1 = "VarekjÃ¸p  55551111               ,Ark.ref *17171717 Dato 08.08 Kl. 11.19 Versjon 1 Aut. 12345     Kiwi Sannergata Sannergt.3 Oslo"
   DETAILS_TC2 = "Visa  112233                       ,Kr.sand Parkeringsselskap        "
   def test_parse_details
 

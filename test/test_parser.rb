@@ -14,11 +14,11 @@ class TestDnBNORCSVParser < Test::Unit::TestCase
     @parser = DnBNOR::CSVParser.new
   end
 
-  ENTRIES_TC0 = "Dato	Forklaring	Rentedato	Ut fra konto	Inn på konto
-08.08.07	Varekjøp  45451919               ,Ark.ref *769769769 Dato 08.08 Kl. 11.19 Versjon 1 Aut. 24642     Kiwi Sannergata Sannergt.3 Oslo	08.08.07	79,70	0,00
+  ENTRIES_TC0 = "Dato	Forklaring	Rentedato	Ut fra konto	Inn pÃ¥ konto
+08.08.07	VarekjÃ¸p  45451919               ,Ark.ref *769769769 Dato 08.08 Kl. 11.19 Versjon 1 Aut. 24642     Kiwi Sannergata Sannergt.3 Oslo	08.08.07	79,70	0,00
 27.07.07	Visa  101010                       ,Norgestaxi AS 	01.08.07	560,00	0,00
 06.08.07	Giro  201                          ,Talkmore AS Nettgiro M/kid	06.08.07	1500,00	0,00
-18.08.07	Overføring Innland  22112233     ,Kent Dahl 	28.08.07	0,00	20000,00"
+18.08.07	OverfÃ¸ring Innland  22112233     ,Kent Dahl 	28.08.07	0,00	20000,00"
 
 
   def test_entries_tc0
@@ -91,8 +91,8 @@ class TestDnBNORCSVParser < Test::Unit::TestCase
   end
 
 
-  ENTRIES_TC1 = "Dato	Forklaring	Rentedato	Ut fra konto	Inn på konto
-08.08.07	Varekjøp  45451919               ,Ark.ref *769769769 Dato 08.08 Kl. 11.19 Versjon 1 Aut. 24642     Kiwi Sannergata Sannergt.3 Oslo	08.08.07	79,70	0,00
+  ENTRIES_TC1 = "Dato	Forklaring	Rentedato	Ut fra konto	Inn pÃ¥ konto
+08.08.07	VarekjÃ¸p  45451919               ,Ark.ref *769769769 Dato 08.08 Kl. 11.19 Versjon 1 Aut. 24642     Kiwi Sannergata Sannergt.3 Oslo	08.08.07	79,70	0,00
 
 "
   def test_entries_blanks
@@ -101,7 +101,7 @@ class TestDnBNORCSVParser < Test::Unit::TestCase
   end
 
 
-  ENTRIES_TC2 = "Dato	Forklaring	Rentedato	Ut fra konto	Inn på konto
+  ENTRIES_TC2 = "Dato	Forklaring	Rentedato	Ut fra konto	Inn pÃ¥ konto
 08.08.07		08.08.07	79,70	0,00
 
 "
@@ -129,7 +129,7 @@ class TestDnBNORSpreadsheetParser < Test::Unit::TestCase
   def test_loading_headers
     assert_equal( 5,      @parser.headers.size )
     assert_equal( "Dato", @parser.headers.first )
-    assert_equal( "Inn på konto", @parser.headers.last )
+    assert_equal( "Inn pÃ¥ konto", @parser.headers.last )
   end
 
   def test_entries_

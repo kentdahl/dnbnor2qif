@@ -21,7 +21,7 @@ module DnBNOR
       "Forklaring"   => :details, 
       "Rentedato"    => :interest_date, 
       "Ut fra konto" => :debit,
-      "Inn på konto" => :credit,
+      "Inn pÃ¥ konto" => :credit,
 
       # Norwegian variations
       "Ut av konto" => :debit,
@@ -93,7 +93,7 @@ module DnBNOR
         c[:visa] = $1
         c[:comment] = $2 + " (Visa)"        
 
-      when /^(Overføring [InUt]+land)\s+(\d+)\s+(.*?)\s*$/
+      when /^(OverfÃ¸ring [InUt]+land)\s+(\d+)\s+(.*?)\s*$/
         c[:archive_id] = $2.to_i
         c[:comment]        = $3 + " (#{$1})"
       when /^(Giro)\s+(\d+)\s+(.*?)\s*$/
@@ -102,10 +102,10 @@ module DnBNOR
 
 
       # when /^Kontoregulering/
-      # when /^Lønn/
+      # when /^LÃ¸nn/
       # when /^Omkostninger/
 
-      when /^(Reservert\s+\-\s+ikke\s+Bokført)\s*$/
+      when /^(Reservert\s+\-\s+ikke\s+BokfÃ¸rt)\s*$/
         # Should be ignored?
         
 
