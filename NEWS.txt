@@ -1,0 +1,3 @@
+Very preliminary support for Sparebanken Pluss CSV format.
+Preliminary support for Postbanken format.
+- Postbanken is based on DnB NOR.

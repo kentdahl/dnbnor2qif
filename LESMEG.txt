@@ -1,0 +1,109 @@
+ ____________________________________________________
+|                                                    |
+|            *** DNBNOR-TO-QIF ***                   |
+|____________________________________________________|
+
+  dnbnor2qif er et enkelt verktøy for å hjelpe til 
+  med å integrere de datafilene som nettsidene til 
+DnBNOR sin nettbank tilbyr nedlasting av kontoutskriftene, 
+slik at de kan importeres i et regnskapsprogram som godtar 
+         QIF formatet, for eksempel GnuCash.
+
+                  Kent Dahl 
+            <kentda AT pvv DOT org>
+
+              Copyright 2007-2008
+         Sluppet under Ruby lisensen.
+
+Du finner nyeste versjon fra:
+          http://dnbnor2qif.rubyforge.org/
+          http://rubyforge.org/projects/dnbnor2qif/
+          http://www.pvv.org/~kentda/ruby/
+ 
+
+____________________________________________________
+Advarsel:
+
+Dette er et kjapt, stygt og eksperimentelt stykke kode og både vøren og
+uvøren bruk av det kan medføre konkurs. Du er herved advart.
+
+Dette programmet er på ingen måte, implisert eller ei, relatert, affiliert,
+promotert, digitalisert, revidert, undervurdert, overvurdert, transkribert,
+punktert, levitert, derivert, integrert eller multiplutifikasjonsmastrubert
+av DnB NOR (https://www.dnbnor.no/). Gå på nettsidene deres og mas på OFX.
+
+____________________________________________________
+Innhold:
+
+- Du trenger
+- Hvordan bruke
+- Planer for fremtiden
+- Relatert
+
+____________________________________________________
+Du trenger:
+
+* Ruby 1.8.x eller nyere
+  -- http://www.ruby-lang.org/
+
+* roo 1.0.1 eller nyere
+  -- http://roo.rubyforge.org/
+  -- Run: gem install roo
+
+____________________________________________________
+Hvordan bruke dnbnor2qif:
+
+Først, last ned kontoutskrift fra bankens nettsider:
+- Klikk på "Totaloversikt" og velg aktuell konto.
+- Klikk på "Kontoutskrift" fanen og hent aktuell måned.
+- Høyre-klikk  på"Kopier til regneark" lenken og lagre dokumentet
+
+Kjør deretter skriptet fra kommandolinjen:
+  ruby dnbnor2qif.rb -c [command] -i [input] [ -o [output] ]
+
+Kommandolinjeopsjoner:
+  -c, --command   |- Kommando som skal kjøres, f.eks. 'convert'.
+  -i, --input     |- Inndata fil (XLS fil fraDnBNOR)
+  -o, --output    |- Utdata fil (QIF) (valgfritt)
+  -a, --account   |- Fullstending GnuCash navn på bankkontoen (valgfitt)
+  -d, --debug     |- Utfyllende debug logger (eksperimentelt)
+
+
+Du kan også kjøre enhetstestene for å sjekke at skriptet fungerer som det 
+skal på din maskin og at du har alle nødvendige avhengigheter installert.
+
+Kjør enhetstester:
+  ruby test/run.rb 
+
+____________________________________________________
+Planer for fremtiden:
+
+Se i TODO.txt
+
+____________________________________________________
+Relatert:
+
+* expenses2qif til Agenda VR3 PDA'en
+  -- http://agtoys.sourceforge.net/ruby/
+
+* qif/qif.rb
+  -- veldig enkel hjelpeklasse til å skrive QIF filer.
+
+
+____________________________________________________
+Andre mulige alternativer:
+
+* MT2OFX
+  -- http://www.xs4all.nl/~csmale/mt2ofx/en/
+
+* XL2QIF
+  -- http://xl2qif.chez-alice.fr/xl2qif_en.php
+
+* QIF Master 
+  -- (for MacOS X only)
+  -- http://www.thewoodwards.us/sw/QIFMaster/
+
+* MnyBank
+  --- http://ferraroa.dyndns.org:8200/MnyBank/help/doc.htm
+
+____________________________________________________

@@ -1,0 +1,16 @@
+____________________________________________________
+Plans for the future:
+
+* YAML regexp configuration
+- Lage YAML konfigurasjon som lar deg koble regexp'er mot
+  transaksjonene for å fange opp de utgiftspost koblingene
+  som GnuCash ikke finner ut av.
+
+* Nag DnBNOR for better export alternatives for bank statements
+- Especially now that they've gone to Excel. (*shudder*)
+
+* Check what other banks the script can work and be adapted for.
+- Se hvilke andre banker det kan tilpasses for:
+  - Postbanken bruker veldig likt format.
+
+* OFX output format.
