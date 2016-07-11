@@ -96,7 +96,7 @@ module DnBNOR
     end
 
     def parse_data( data )               
-      csv = CSV::Reader.create( data, "\t" )
+      csv = CSV::Reader.create( data, "\t" )  # TODO: FIXME!
       @headers = csv.shift
       p headers if DEBUG
 
