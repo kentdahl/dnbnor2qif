@@ -9,6 +9,7 @@ begin
   require 'rubygems'
   gem 'roo', '> 1.0.0'
   require 'roo'
+  require 'roo-xls' rescue nil
 rescue LoadError
   puts "ERROR: Cannot parse Excel files! Have you got the 'roo' gem?"
   raise
@@ -121,7 +122,7 @@ module DnBNOR
     def load_file( filename )
       @inconv = Iconv.new("ISO-8859-15","UTF-8")
 
-      file = Excel.new(filename)
+      file = ::Roo::Excel.new(filename)
       file.default_sheet = file.sheets.first # "Kontoutskrift" sheet
       parse_data(file)
     end
